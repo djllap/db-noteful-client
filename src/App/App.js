@@ -8,7 +8,6 @@ import NotePageMain from '../NotePageMain/NotePageMain'
 import AddFolder from '../AddFolder/AddFolder'
 import AddNote from '../AddNote/AddNote'
 import ApiContext from '../ApiContext'
-import { numberizeFolder, numberizeNote } from '../notes-helpers'
 import config from '../config'
 import './App.css'
 
