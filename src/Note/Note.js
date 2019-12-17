@@ -17,16 +17,8 @@ export default class Note extends React.Component {
     const noteId = this.props.id
 
     fetch(`${config.API_ENDPOINT}/notes/${noteId}`, {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json'
-      },
+      method: 'DELETE'
     })
-      .then(res => {
-        if (!res.ok)
-          return res.json().then(e => Promise.reject(e))
-        return res.json()
-      })
       .then(() => {
         this.context.deleteNote(noteId)
         // allow parent to perform extra behaviour
@@ -55,15 +47,7 @@ export default class Note extends React.Component {
           {' '}
           remove
         </button>
-        <div className='Note__dates'>
-          <div className='Note__dates-modified'>
-            Modified
-            {' '}
-            <span className='Date'>
-              {format(modified, 'Do MMM YYYY')}
-            </span>
-          </div>
-        </div>
+        
       </div>
     )
   }
